@@ -1,0 +1,10 @@
+{
+  "app": "server/state/app",
+  "config": "config",
+  "constants": "server/constants",
+  "logger": "server/util/logger",
+  "pkg": "../package.json",
+  "routes": "server/routes",
+  "startup": "server/startup",
+  "util": "server/util"
+}

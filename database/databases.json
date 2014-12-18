@@ -1,0 +1,22 @@
+{
+  "load": {
+    "local": {
+      "collections": [
+        "content",
+        "contenttypes",
+        "users",
+        "nodes"
+      ]
+    }
+  },
+  "save": {
+    "local": {
+      "collections" : [
+        "content",
+        "contenttypes",
+        "users",
+        "nodes"
+      ]
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+    "_id": {
+        "$oid": "53c95d882a987b0000dddd27"
+    },
+    "__v": 0,
+    "fields": {
+        "href": "/page2",
+        "parent": "",
+        "title": "Page 2"
+    },
+    "meta": {
+        "node": {
+            "$oid": "53c8091354cbba0000ac2cb2"
+        },
+        "type": {
+            "$oid": "53c808ee54cbba0000ac2cb1"
+        },
+        "labelfield": "title",
+        "typelabel": "Navigation Item",
+        "created": {
+            "$date": 1405705608233
+        },
+        "lastmodified": {
+            "$date": 1405705750479
+        }
+    }
+}

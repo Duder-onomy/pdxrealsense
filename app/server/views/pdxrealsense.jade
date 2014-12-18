@@ -1,0 +1,21 @@
+extends ./index.jade
+
+block head
+    base(href='/pdxrealsense/')
+    link(rel='stylesheet', type='text/css', href='styles/main.css')
+
+block headerContent
+    #header
+
+block content
+    #sidebar
+    #stage
+
+block modal
+    #modal
+
+block footer
+    #footer
+
+block script
+    script(src='/vendor/requirejs/require.js', data-main='main.js')
