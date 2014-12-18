@@ -133,8 +133,10 @@ $(document).ready(function () {
         /*for (a = 0; a < data.alerts.length; a++) {
             $('#alerts_status').text('Alert: ' + JSON.stringify(data.alerts[a]));
         }*/
-        for (g = 0; g < data.gestures.length; g++) {
-            currentGesture(JSON.stringify(data.gestures[g]));
+        if(_.has(data, 'gestures')) {
+            for (g = 0; g < data.gestures.length; g++) {
+                currentGesture(JSON.stringify(data.gestures[g]));
+            }
         }
     }
 
