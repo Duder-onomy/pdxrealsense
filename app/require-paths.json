@@ -1,5 +1,6 @@
 {
   "app": "server/state/app",
+  "authToken" : "server/state/authToken",
   "config": "config",
   "constants": "server/constants",
   "logger": "server/util/logger",

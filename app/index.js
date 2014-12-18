@@ -3,6 +3,7 @@
 require('ral').basePath = __dirname;
 
 var ral = require('ral'),
+    authToken = ral('authToken'),
     config = ral('config'),
     logger = ral('logger'),
     notifyParent = ral('startup/notifyParent'),
@@ -13,6 +14,7 @@ config
     .initialize()
     .then(startup.initialize)
     .then(routes.initialize)
+    .then(authToken.initialize)
     .then(startup.listen)
     .then(notifyParent.success)
     .catch(function(error) {
