@@ -1,0 +1,37 @@
+extends ./index.jade
+
+block head
+    link(rel='stylesheet', type='text/css', href='/vendor/foundation/css/normalize.css')
+    link(rel='stylesheet', type='text/css', href='/vendor/foundation/css/foundation.css')
+
+block content
+    #stage
+        .row
+            .small-4.columns
+                input#gestures(type='checkbox') 
+                | Gestures
+                input#alerts(type='checkbox')
+                | Alerts
+            .small-4.columns
+                button#Start Start
+                button#Stop(disabled='disabled') Stop
+        .row
+            .small-12.columns
+                canvas#myCanvas(style='border:1px solid #000000;')
+        .row
+            .small-12.columns
+                #gestures_status
+        .row
+            .small-12.columns
+                #alerts_status
+        .row
+            .small-12.columns
+                div Status:
+                    #status
+    
+block script
+    script(src='/vendor/jquery/dist/jquery.min.js')
+    script(src='/staticPages/promise.js')
+    script(src='/staticPages/realsense-3.0.js')
+    script(src='/staticPages/realsenseinfo-3.0.js')
+    script(src='/staticPages/start.js')

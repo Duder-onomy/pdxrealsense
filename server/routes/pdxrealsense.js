@@ -19,6 +19,12 @@ module.exports = function() {
             res.render('summary');
         });
 
+    pdxrealsenseRouter
+        .route('/start')
+        .get(function(req, res) {
+            res.render('start');
+        });
+
     app.expressApp
         .ws('/info', function(ws, req) {
             ws.on('message', function(msg) {
