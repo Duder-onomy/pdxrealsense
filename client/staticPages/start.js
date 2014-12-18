@@ -84,53 +84,57 @@ $(document).ready(function () {
     });
 
     function onHandData(mid, module, data) {
-        var canvas = document.getElementById('myCanvas');
-        var context = canvas.getContext('2d');
-        var radius = 5;
-        var scale = 1;
+        var canvas = document.getElementById('myCanvas'),
+            context = canvas.getContext('2d'),
+            radius = 5,
+            scale = 1;
 
         canvas.width = imageSize.width;
         canvas.height = imageSize.height;
 
-        if (data.hands == 'undefined') return;
-        for (h = 0; h < data.hands.length; h++) {
-            var joints = data.hands[h].trackedJoint;
-            var baseX = joints[0].positionImage.x;
-            var baseY = joints[0].positionImage.y;
-            var wristX = joints[0].positionImage.x;
-            var wristY = joints[0].positionImage.y;
+        if(!_.has(data, 'hands')) {
+            status('NO HANDS!!');
+        } else {
+            for (h = 0; h < data.hands.length; h++) {
+                var joints = data.hands[h].trackedJoint;
+                var baseX = joints[0].positionImage.x;
+                var baseY = joints[0].positionImage.y;
+                var wristX = joints[0].positionImage.x;
+                var wristY = joints[0].positionImage.y;
 
-            for (j = 0; j < joints.length; j++) {
-                if (joints[j] == null || joints[j].confidence <= 0) continue;
+                for (j = 0; j < joints.length; j++) {
+                    if (joints[j] == null || joints[j].confidence <= 0) continue;
 
-                var x = joints[j].positionImage.x;
-                var y = joints[j].positionImage.y;
+                    var x = joints[j].positionImage.x;
+                    var y = joints[j].positionImage.y;
 
-                context.beginPath();
-                context.arc(x * scale, y * scale, radius, 0, 2 * Math.PI);
-                context.lineWidth = 2;
-                context.strokeStyle = 'green';
-                context.stroke();
+                    context.beginPath();
+                    context.arc(x * scale, y * scale, radius, 0, 2 * Math.PI);
+                    context.lineWidth = 2;
+                    context.strokeStyle = 'green';
+                    context.stroke();
 
-                if (j == 2 || j == 6 || j == 10 || j == 14 || j == 18) {
-                    baseX = wristX;
-                    baseY = wristY;
+                    if (j == 2 || j == 6 || j == 10 || j == 14 || j == 18) {
+                        baseX = wristX;
+                        baseY = wristY;
+                    }
+
+                    context.beginPath();
+                    context.moveTo(baseX * scale, baseY * scale);
+                    context.lineTo(x * scale, y * scale);
+                    context.stroke();
+
+                    baseX = x;
+                    baseY = y;
                 }
-
-                context.beginPath();
-                context.moveTo(baseX * scale, baseY * scale);
-                context.lineTo(x * scale, y * scale);
-                context.stroke();
-
-                baseX = x;
-                baseY = y;
             }
         }
-        for (a = 0; a < data.alerts.length; a++) {
+
+        /*for (a = 0; a < data.alerts.length; a++) {
             $('#alerts_status').text('Alert: ' + JSON.stringify(data.alerts[a]));
-        }
+        }*/
         for (g = 0; g < data.gestures.length; g++) {
-            $('#gestures_status').text('Gesture: ' + JSON.stringify(data.gestures[g]));
+            currentGesture(JSON.stringify(data.gestures[g]));
         }
     }
 
@@ -145,6 +149,10 @@ $(document).ready(function () {
             status('Error ' + data.sts);
             clear();
         }
+    }
+
+    function currentGesture(gesture) {
+        $('#currentGesture').text();
     }
 
     function status(msg) {
