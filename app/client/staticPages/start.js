@@ -96,7 +96,7 @@ $(document).ready(function () {
             status('NO HANDS!!');
         } else {
             status('Found ' + _.size(data.hands) + ' hand');
-            _.each(data.hands, function() {
+            _.each(data.hands, function(hand) {
                 drawHandOnCanvas(hand, context);
             });
         }
