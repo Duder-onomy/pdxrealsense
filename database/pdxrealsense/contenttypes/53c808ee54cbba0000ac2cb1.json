@@ -1,0 +1,29 @@
+{
+    "_id": {
+        "$oid": "53c808ee54cbba0000ac2cb1"
+    },
+    "__v": 4,
+    "fields": [
+        {
+            "defaultValue": "",
+            "_id": "title",
+            "validation": [],
+            "type": "textbox",
+            "options": false,
+            "min": 1,
+            "max": 1,
+            "label": "Title"
+        },
+        {
+            "defaultValue": "",
+            "_id": "href",
+            "validation": [],
+            "type": "textbox",
+            "options": false,
+            "min": 1,
+            "max": 1,
+            "label": "href"
+        }
+    ],
+    "label": "Navigation Item"
+}
