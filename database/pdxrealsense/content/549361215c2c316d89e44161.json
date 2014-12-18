@@ -1,0 +1,28 @@
+{
+    "_id": {
+        "$oid": "549361215c2c316d89e44161"
+    },
+    "fields": {
+        "next-step": "step7",
+        "image": "/images/windows.png",
+        "slug": "step6",
+        "title": "Windows"
+    },
+    "meta": {
+        "node": {
+            "$oid": "54935ac37f57b4ab86e55a40"
+        },
+        "type": {
+            "$oid": "54935b247f57b4ab86e55a41"
+        },
+        "labelfield": "title",
+        "typelabel": "Image Game Item",
+        "created": {
+            "$date": "2014-12-18T15:20:01.587-0800"
+        },
+        "lastmodified": {
+            "$date": "2014-12-18T15:20:01.586-0800"
+        }
+    },
+    "__v": 0
+}

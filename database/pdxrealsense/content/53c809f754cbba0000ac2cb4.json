@@ -19,10 +19,10 @@
         "labelfield": "title",
         "typelabel": "Navigation Item",
         "created": {
-            "$date": 1405618679920
+            "$date": "2014-07-17T10:37:59.920-0700"
         },
         "lastmodified": {
-            "$date": 1405705744768
+            "$date": "2014-07-18T10:49:04.768-0700"
         }
     }
 }

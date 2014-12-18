@@ -24,10 +24,10 @@
         "labelfield": "title",
         "typelabel": "Page",
         "created": {
-            "$date": 1405639605536
+            "$date": "2014-07-17T16:26:45.536-0700"
         },
         "lastmodified": {
-            "$date": 1405639605535
+            "$date": "2014-07-17T16:26:45.535-0700"
         }
     },
     "__v": 0

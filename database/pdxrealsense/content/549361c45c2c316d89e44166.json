@@ -1,0 +1,28 @@
+{
+    "_id": {
+        "$oid": "549361c45c2c316d89e44166"
+    },
+    "fields": {
+        "next-step": "done",
+        "image": "/images/dog.jpg",
+        "slug": "step11",
+        "title": "Dog"
+    },
+    "meta": {
+        "node": {
+            "$oid": "54935ac37f57b4ab86e55a40"
+        },
+        "type": {
+            "$oid": "54935b247f57b4ab86e55a41"
+        },
+        "labelfield": "title",
+        "typelabel": "Image Game Item",
+        "created": {
+            "$date": "2014-12-18T15:22:44.365-0800"
+        },
+        "lastmodified": {
+            "$date": "2014-12-18T15:22:44.365-0800"
+        }
+    },
+    "__v": 0
+}

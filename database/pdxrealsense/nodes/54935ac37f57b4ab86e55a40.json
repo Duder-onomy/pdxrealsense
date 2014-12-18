@@ -1,0 +1,14 @@
+{
+    "_id": {
+        "$oid": "54935ac37f57b4ab86e55a40"
+    },
+    "label": "Hot Or Not Game",
+    "parent": null,
+    "ancestors": [],
+    "allowedTypes": [
+        {
+            "$oid": "54935b247f57b4ab86e55a41"
+        }
+    ],
+    "__v": 1
+}

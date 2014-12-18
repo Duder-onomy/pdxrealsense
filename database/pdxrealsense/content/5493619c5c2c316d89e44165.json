@@ -1,0 +1,28 @@
+{
+    "_id": {
+        "$oid": "5493619c5c2c316d89e44165"
+    },
+    "fields": {
+        "next-step": "step11",
+        "image": "/images/cat.jpg",
+        "slug": "step10",
+        "title": "Cat"
+    },
+    "meta": {
+        "node": {
+            "$oid": "54935ac37f57b4ab86e55a40"
+        },
+        "type": {
+            "$oid": "54935b247f57b4ab86e55a41"
+        },
+        "labelfield": "title",
+        "typelabel": "Image Game Item",
+        "created": {
+            "$date": "2014-12-18T15:22:04.428-0800"
+        },
+        "lastmodified": {
+            "$date": "2014-12-18T15:22:04.428-0800"
+        }
+    },
+    "__v": 0
+}

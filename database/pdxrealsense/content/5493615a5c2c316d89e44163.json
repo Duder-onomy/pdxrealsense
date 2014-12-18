@@ -1,0 +1,28 @@
+{
+    "_id": {
+        "$oid": "5493615a5c2c316d89e44163"
+    },
+    "fields": {
+        "next-step": "step9",
+        "image": "/images/men.png",
+        "slug": "step8",
+        "title": "Men"
+    },
+    "meta": {
+        "node": {
+            "$oid": "54935ac37f57b4ab86e55a40"
+        },
+        "type": {
+            "$oid": "54935b247f57b4ab86e55a41"
+        },
+        "labelfield": "title",
+        "typelabel": "Image Game Item",
+        "created": {
+            "$date": "2014-12-18T15:20:58.950-0800"
+        },
+        "lastmodified": {
+            "$date": "2014-12-18T15:20:58.949-0800"
+        }
+    },
+    "__v": 0
+}

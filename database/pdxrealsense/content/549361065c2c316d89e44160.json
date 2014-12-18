@@ -1,0 +1,28 @@
+{
+    "_id": {
+        "$oid": "549361065c2c316d89e44160"
+    },
+    "fields": {
+        "next-step": "step6",
+        "image": "/images/mac.jpg",
+        "slug": "step5",
+        "title": "Mac"
+    },
+    "meta": {
+        "node": {
+            "$oid": "54935ac37f57b4ab86e55a40"
+        },
+        "type": {
+            "$oid": "54935b247f57b4ab86e55a41"
+        },
+        "labelfield": "title",
+        "typelabel": "Image Game Item",
+        "created": {
+            "$date": "2014-12-18T15:19:34.272-0800"
+        },
+        "lastmodified": {
+            "$date": "2014-12-18T15:19:34.272-0800"
+        }
+    },
+    "__v": 0
+}

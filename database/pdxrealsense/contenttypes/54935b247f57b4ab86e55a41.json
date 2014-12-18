@@ -1,0 +1,56 @@
+{
+    "_id": {
+        "$oid": "54935b247f57b4ab86e55a41"
+    },
+    "label": "Image Game Item",
+    "fields": [
+        {
+            "dataType": "string",
+            "defaultValue": "",
+            "_uid": "d204b710-8708-11e4-b13c-bd3ecbaeb48b",
+            "_id": "title",
+            "validation": [],
+            "type": "textbox",
+            "options": false,
+            "min": 1,
+            "max": 1,
+            "label": "Title"
+        },
+        {
+            "dataType": "reference",
+            "_uid": "d204b711-8708-11e4-b13c-bd3ecbaeb48b",
+            "_id": "slug",
+            "validation": [],
+            "type": "slug",
+            "options": "title",
+            "min": 1,
+            "max": 1,
+            "label": "slug"
+        },
+        {
+            "dataType": "string",
+            "defaultValue": "",
+            "_uid": "d204b712-8708-11e4-b13c-bd3ecbaeb48b",
+            "_id": "image",
+            "validation": [],
+            "type": "textbox",
+            "options": false,
+            "min": 1,
+            "max": 1,
+            "label": "image"
+        },
+        {
+            "_uid": "382b9300-870a-11e4-9fdb-01cb2429df6d",
+            "dataType": "string",
+            "defaultValue": "",
+            "_id": "next-step",
+            "validation": [],
+            "type": "textbox",
+            "options": false,
+            "min": 1,
+            "max": 1,
+            "label": "next step"
+        }
+    ],
+    "__v": 1
+}
