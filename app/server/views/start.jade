@@ -7,12 +7,13 @@ block head
 block content
     #stage
         .row
-            .small-4.columns
+            .small-12.columns
                 input#gestures(type='checkbox') 
                 | Gestures
                 input#alerts(type='checkbox')
                 | Alerts
-            .small-4.columns
+        .row        
+            .small-12.columns
                 button#Start Start
                 button#Stop(disabled='disabled') Stop
         .row
@@ -20,10 +21,8 @@ block content
                 canvas#myCanvas(style='border:1px solid #000000;')
         .row
             .small-12.columns
-                #gestures_status
-        .row
-            .small-12.columns
-                #alerts_status
+                span The Current Gesture is:
+                span#currentGesture
         .row
             .small-12.columns
                 div Status:
@@ -31,6 +30,7 @@ block content
     
 block script
     script(src='/vendor/jquery/dist/jquery.min.js')
+    script(src='/vendor/underscore/underscore-min.js')
     script(src='/staticPages/promise.js')
     script(src='/staticPages/realsense-3.0.js')
     script(src='/staticPages/realsenseinfo-3.0.js')

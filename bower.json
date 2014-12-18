@@ -7,7 +7,8 @@
     "compass-mixins": "1.0.2",
     "history.js": "~1.8.0",
     "foundation": "~5.4.7",
-    "font-awesome": "~4.2.0"
+    "font-awesome": "~4.2.0",
+    "underscore": "~1.7.0"
   },
   "devDependencies": {
     "mocha": "2.0.1",
