@@ -84,10 +84,10 @@ $(document).ready(function () {
     });
 
     function onHandData(mid, module, data) {
-        var canvas = document.getElementById('myCanvas');
-        var context = canvas.getContext('2d');
-        var radius = 5;
-        var scale = 1;
+        var canvas = document.getElementById('myCanvas'),
+            context = canvas.getContext('2d'),
+            radius = 5,
+            scale = 1;
 
         canvas.width = imageSize.width;
         canvas.height = imageSize.height;
