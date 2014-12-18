@@ -37,7 +37,7 @@ module.exports = function() {
                         });
                     }
                 });
-        });    
+        });
 
     app.expressApp
         .ws('/info', function(ws, req) {
@@ -63,7 +63,7 @@ function _getContentBySlug(slug) {
             .then(function(data) {
                 resolve(data.results[0].fields);
             })
-            .catch (function(error) {
+            .catch(function(error) {
                 logger.error(error);
                 reject();
             });
