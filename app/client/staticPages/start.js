@@ -156,7 +156,7 @@ $(document).ready(function () {
     }
 
     function currentGesture(gesture) {
-        $('#currentGesture').text();
+        $('#currentGesture').text(gesture);
     }
 
     function status(msg) {
