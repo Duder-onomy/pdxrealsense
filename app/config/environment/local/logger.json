@@ -1,9 +1,0 @@
-{
-  "adapters": [
-    {
-      "type": "console",
-      "application": "pdxrealsense",
-      "machine": "local"
-    }
-  ]
-}
