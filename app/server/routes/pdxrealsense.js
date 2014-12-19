@@ -8,7 +8,10 @@ var express = require('express'),
     app = ral('app');
 
 module.exports = function() {
-    var pdxrealsenseRouter = express.Router();
+    var pdxrealsenseRouter = express.Router(),
+        webSocket,
+        yesVotes = 0,
+        noVotes = 0;
 
     pdxrealsenseRouter
         .route('/pdxrealsense*?')
@@ -45,9 +48,23 @@ module.exports = function() {
                 console.log(msg);
             });
 
-            setInterval(function() {
+            /*setInterval(function() {
                 ws.send(JSON.stringify({ message : 'its chill'}));
-            }, 5000);
+            }, 5000);*/
+        });
+
+    pdxrealsenseRouter
+        .route('/vote/:vote')
+        .post(function(req, res) {
+            if(req.params.vote === 'yes') {
+                yesVotes = yesVotes + 1;
+            } else {
+                noVotes = noVotes + 1;
+            }
+
+            app.expressApp
+                .ws
+                .send(JSON.stringify({ yesVotes : yesVotes, noVotes : noVotes }));
         });
 
     return pdxrealsenseRouter;
