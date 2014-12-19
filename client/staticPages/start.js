@@ -155,8 +155,7 @@ $(document).ready(function () {
             sense.Close().then(function (result) {
                 status('Stopped');
                 clear();
-                $.post('/vote/yes')
-                    .success(_goToNextStep);
+                $.post('/vote/yes', _goToNextStep);
             });
 
         } else if(gesture.name === 'thumb_down') {
@@ -164,8 +163,7 @@ $(document).ready(function () {
             sense.Close().then(function (result) {
                 status('Stopped');
                 clear();
-                $.post('/vote/no')
-                    .success(_goToNextStep);
+                $.post('/vote/no', _goToNextStep);
             });
         }
     }
