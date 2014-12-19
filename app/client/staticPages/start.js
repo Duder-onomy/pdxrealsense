@@ -152,12 +152,21 @@ $(document).ready(function () {
 
         if(gesture.name === 'thumb_up') {
             status('VOTING YES');
-            $.post('/vote/yes')
-                .done(_goToNextStep);
+            sense.Close().then(function (result) {
+                status('Stopped');
+                clear();
+                $.post('/vote/yes')
+                    .done(_goToNextStep);
+            });
+
         } else if(gesture.name === 'thumb_down') {
             status('VOTING NO');
-            $.post('/vote/no')
-                .done(_goToNextStep);
+            sense.Close().then(function (result) {
+                status('Stopped');
+                clear();
+                $.post('/vote/no')
+                    .done(_goToNextStep);
+            });
         }
     }
 
