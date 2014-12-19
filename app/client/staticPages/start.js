@@ -84,20 +84,20 @@ $(document).ready(function () {
     });
 
     function onHandData(mid, module, data) {
-        var canvas = document.getElementById('myCanvas'),
-            context = canvas.getContext('2d'),
-            radius = 5,
-            scale = 1;
+        /*var canvas = document.getElementById('myCanvas'),*/
+            /*context = canvas.getContext('2d'),*/
+            /*radius = 5,*/
+            /*scale = 1;*/
 
-        canvas.width = imageSize.width;
-        canvas.height = imageSize.height;
+        /*canvas.width = imageSize.width;*/
+        /*canvas.height = imageSize.height;*/
 
         if(!_.has(data, 'hands')) {
             status('NO HANDS!!');
         } else {
             status('Found ' + _.size(data.hands) + ' hand');
             _.each(data.hands, function(hand) {
-                drawHandOnCanvas(hand, context);
+                /*drawHandOnCanvas(hand, context);*/
             });
         }
 
@@ -108,12 +108,12 @@ $(document).ready(function () {
         }
     }
 
-    function drawHandOnCanvas(hand) {
-        var joints = hand.trackedJoint;
-        var baseX = joints[0].positionImage.x;
-        var baseY = joints[0].positionImage.y;
-        var wristX = joints[0].positionImage.x;
-        var wristY = joints[0].positionImage.y;
+    /*function drawHandOnCanvas(hand, context) {
+        var joints = hand.trackedJoint,
+            baseX = joints[0].positionImage.x,
+            baseY = joints[0].positionImage.y,
+            wristX = joints[0].positionImage.x,
+            wristY = joints[0].positionImage.y;
 
         for (j = 0; j < joints.length; j++) {
             if (joints[j] == null || joints[j].confidence <= 0) continue;
@@ -140,7 +140,7 @@ $(document).ready(function () {
             baseX = x;
             baseY = y;
         }
-    }
+    }*/
 
     function onConnect(data) {
         if (data.connected == false) {
