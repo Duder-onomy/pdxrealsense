@@ -26,45 +26,43 @@ $(document).ready(function () {
         }
     })*/
 
-    function () {
-        document.getElementById("Start").disabled = true;
-        PXCMSenseManager_CreateInstance().then(function (result) {
-            sense = result;
-            return sense.EnableHand(onHandData);
-        }).then(function (result) {
-            handModule = result;
-            status('Init started');
-            return sense.Init(onConnect, onStatus);
-        }).then(function (result) {
-            return handModule.CreateActiveConfiguration();
-        }).then(function (result) {
-            handConfiguration = result;
-            if (document.getElementById("alerts").checked)
-                return handConfiguration.EnableAllAlerts();
-            else
-                return handConfiguration.DisableAllAlerts();
-        }).then(function (result) {
-            if (document.getElementById("gestures").checked)
-                return handConfiguration.EnableAllGestures(false);
-            else
-                return handConfiguration.DisableAllGestures();
-        }).then(function (result) {
-            return handConfiguration.ApplyChanges();
-        }).then(function (result) {
-            return sense.QueryCaptureManager();
-        }).then(function (capture) {
-            return capture.QueryImageSize(pxcmConst.PXCMCapture.STREAM_TYPE_DEPTH);
-        }).then(function (result) {
-            imageSize = result.size;
-            return sense.StreamFrames();
-        }).then(function (result) {
-            status('Streaming ' + imageSize.width + 'x' + imageSize.height);
-            document.getElementById("Stop").disabled = false;
-        }).catch(function (error) {
-            status('Init failed: ' + JSON.stringify(error));
-            document.getElementById("Start").disabled = false;
-        });
-    }();
+    document.getElementById("Start").disabled = true;
+    PXCMSenseManager_CreateInstance().then(function (result) {
+        sense = result;
+        return sense.EnableHand(onHandData);
+    }).then(function (result) {
+        handModule = result;
+        status('Init started');
+        return sense.Init(onConnect, onStatus);
+    }).then(function (result) {
+        return handModule.CreateActiveConfiguration();
+    }).then(function (result) {
+        handConfiguration = result;
+        if (document.getElementById("alerts").checked)
+            return handConfiguration.EnableAllAlerts();
+        else
+            return handConfiguration.DisableAllAlerts();
+    }).then(function (result) {
+        if (document.getElementById("gestures").checked)
+            return handConfiguration.EnableAllGestures(false);
+        else
+            return handConfiguration.DisableAllGestures();
+    }).then(function (result) {
+        return handConfiguration.ApplyChanges();
+    }).then(function (result) {
+        return sense.QueryCaptureManager();
+    }).then(function (capture) {
+        return capture.QueryImageSize(pxcmConst.PXCMCapture.STREAM_TYPE_DEPTH);
+    }).then(function (result) {
+        imageSize = result.size;
+        return sense.StreamFrames();
+    }).then(function (result) {
+        status('Streaming ' + imageSize.width + 'x' + imageSize.height);
+        document.getElementById("Stop").disabled = false;
+    }).catch(function (error) {
+        status('Init failed: ' + JSON.stringify(error));
+        document.getElementById("Start").disabled = false;
+    });
 
     function clear() {
         $('#alerts_status').text('');
