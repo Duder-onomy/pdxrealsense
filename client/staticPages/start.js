@@ -95,7 +95,7 @@ $(document).ready(function () {
 
         if(_.has(data, 'gestures')) {
             for (g = 0; g < data.gestures.length; g++) {
-                currentGesture(JSON.stringify(data.gestures[g]));
+                currentGesture(data.gestures[g]);
             }
         }
     }
