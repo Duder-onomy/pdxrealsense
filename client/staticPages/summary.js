@@ -2,10 +2,12 @@
 (function() {
     var webSocketUrl = location.origin.replace(/http/, 'ws') + '/info',
         ws = new WebSocket(webSocketUrl),
-        $resultList = $('#resultList');
+        $yesVotes = $('#yesVotes'),
+        $noVotes = $('#noVotes');
 
     ws.onmessage = function (event) {
-        $resultList.append('<li>'+ event.data +'</li>');
+        $yesVotes.text(event.yesVotes);
+        $noVotes.text(event.noVotes);
     };
 })();
 /* jshint ignore:end */

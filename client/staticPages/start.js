@@ -26,7 +26,7 @@ $(document).ready(function () {
         }
     })*/
 
-    $('#Start').click(function () {
+    function () {
         document.getElementById("Start").disabled = true;
         PXCMSenseManager_CreateInstance().then(function (result) {
             sense = result;
@@ -64,7 +64,7 @@ $(document).ready(function () {
             status('Init failed: ' + JSON.stringify(error));
             document.getElementById("Start").disabled = false;
         });
-    });
+    }();
 
     function clear() {
         $('#alerts_status').text('');
@@ -156,11 +156,25 @@ $(document).ready(function () {
     }
 
     function currentGesture(gesture) {
-        $('#currentGesture').text(gesture);
+        $('#currentGesture').text(gesture.name);
+
+        if(gesture.name === 'thumb_up') {
+            status('VOTING YES');
+            $.post('/vote/yes')
+                .done(_goToNextStep);
+        } else if(gesture.name === 'thumb_down') {
+            status('VOTING NO');
+            $.post('/vote/no')
+                .done(_goToNextStep);
+        }
     }
 
     function status(msg) {
         $('#status').text(msg);
+    }
+
+    function _goToNextStep() {
+        $('#nextStep').click();
     }
 });
 /* jshint ignore:end */

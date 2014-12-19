@@ -9,16 +9,16 @@ block content
         .row
             .small-12.columns
                 h1= currentImageName
-        .row
+        .row.hide
             .small-12.columns
-                input#gestures(type='checkbox') 
+                input#gestures(type='checkbox', checked='true') 
                 | Gestures
                 input#alerts(type='checkbox')
                 | Alerts
-        .row        
-            .small-12.columns
-                button#Start Start
-                button#Stop(disabled='disabled') Stop
+        //- .row        
+        //-     .small-12.columns
+        //-         button#Start Start
+        //-         button#Stop(disabled='disabled') Stop
         //- .row
         //-     .small-6.columns
         //-         canvas#myCanvas(style='border:1px solid #000000;')
@@ -35,7 +35,7 @@ block content
                     #status
         .row
             .small-12.columns
-                a(href=nextStep) Next Step
+                a#nextStep.button(href=nextStep) Next Step
     
 block script
     script(src='/vendor/jquery/dist/jquery.min.js')
