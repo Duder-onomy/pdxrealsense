@@ -54,7 +54,7 @@ module.exports = function() {
         });
 
     pdxrealsenseRouter
-        .route('/vote/:vote')
+        .route('/vote/:vote?')
         .post(function(req, res) {
             if(req.params.vote === 'yes') {
                 yesVotes = yesVotes + 1;
