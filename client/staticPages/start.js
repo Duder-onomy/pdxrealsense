@@ -26,7 +26,6 @@ $(document).ready(function () {
         }
     })*/
 
-    document.getElementById("Start").disabled = true;
     PXCMSenseManager_CreateInstance().then(function (result) {
         sense = result;
         return sense.EnableHand(onHandData);
@@ -38,10 +37,7 @@ $(document).ready(function () {
         return handModule.CreateActiveConfiguration();
     }).then(function (result) {
         handConfiguration = result;
-        if (document.getElementById("alerts").checked)
-            return handConfiguration.EnableAllAlerts();
-        else
-            return handConfiguration.DisableAllAlerts();
+        return handConfiguration.DisableAllAlerts();
     }).then(function (result) {
         if (document.getElementById("gestures").checked)
             return handConfiguration.EnableAllGestures(false);
@@ -58,10 +54,8 @@ $(document).ready(function () {
         return sense.StreamFrames();
     }).then(function (result) {
         status('Streaming ' + imageSize.width + 'x' + imageSize.height);
-        document.getElementById("Stop").disabled = false;
     }).catch(function (error) {
         status('Init failed: ' + JSON.stringify(error));
-        document.getElementById("Start").disabled = false;
     });
 
     function clear() {
