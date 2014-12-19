@@ -48,9 +48,9 @@ module.exports = function() {
                 console.log(msg);
             });
 
-            /*setInterval(function() {
-                ws.send(JSON.stringify({ message : 'its chill'}));
-            }, 5000);*/
+            setInterval(function() {
+                ws.send(JSON.stringify({ yesVotes : yesVotes, noVotes : noVotes }));
+            }, 1000);
         });
 
     pdxrealsenseRouter
@@ -61,10 +61,6 @@ module.exports = function() {
             } else {
                 noVotes = noVotes + 1;
             }
-
-            app.expressApp
-                .ws
-                .send(JSON.stringify({ yesVotes : yesVotes, noVotes : noVotes }));
         });
 
     return pdxrealsenseRouter;
